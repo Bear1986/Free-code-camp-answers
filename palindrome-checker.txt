@@ -1,0 +1,40 @@
+function stringWithOnlyAlphaNumeric(str){
+  // Replace takes a regex and replacement string
+  return str.replace(/[^a-z0-9]/gi,"");
+
+}
+//console.log(stringWithOnlyAlphaNumeric("Hello, World!"));
+
+
+function stringLowerCased(str){
+  return str.toLowerCase();
+}
+
+//console.log(stringLowercased(""));
+
+const stringReversed = (str) => {
+
+  let result =""
+  for (let i=str.length-1; i >= 0; i--) {
+    result += str[i]
+  }
+  return result;
+}
+
+
+
+function palindrome(str) {
+  // Remove non-alphanumeric characters
+  const cleanedUpStr = stringWithOnlyAlphaNumeric(str);
+  // Make strings lowercase
+  const lowercaseStr = stringLowerCased(cleanedUpStr);
+  // Reverse the sting
+  const reversedStr = stringReversed(lowercaseStr);
+  // return the comparasion of:
+  // Reversed stirng equals to? Lowercase cleanned up string
+  return lowercaseStr== reversedStr;
+
+}
+
+
+console.log(palindrome("eye"));
